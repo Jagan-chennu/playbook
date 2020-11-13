@@ -1,0 +1,19 @@
+--- # installing httpd package
+- hosts: db
+  become: yes
+  gather_facts: yes
+  connection: ssh
+  user: ansible
+  tasks:
+          - name: installing httpd package
+            yum: name='{{ item }}' state=present
+            with_items:
+                    - httpd
+                    - ntp
+            when: ansible_os_family == "RedHat"
+
+           - apt: name='{{ item }}' state=present
+             with_items:
+                     - apache2
+                     - ntp
+             when: ansible_os_family == "Debian"
