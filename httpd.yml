@@ -1,5 +1,5 @@
 --- # installing httpd package
-- hosts: db
+- hosts: all
   become: yes
   gather_facts: yes
   connection: ssh
@@ -12,8 +12,8 @@
                     - ntp
             when: ansible_os_family == "RedHat"
 
-           - apt: name='{{ item }}' state=present
-             with_items:
-                     - apache2
-                     - ntp
-             when: ansible_os_family == "Debian"
+          - apt: name='{{ item }}' state=present
+            with_items:
+                    - apache2
+                    - ntp
+            when: ansible_os_family == "Debian"
