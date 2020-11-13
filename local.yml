@@ -1,9 +1,9 @@
 --- # installing httpd package
 - hosts: local
+  user: ansible
   become: yes
   gather_facts: yes
   connection: ssh
-  user: ansible
   tasks:
           - name: installing httpd package
             yum: name='{{ item }}' state=present
