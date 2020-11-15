@@ -1,5 +1,5 @@
 --- # installing httpd package
-- hosts: db
+- hosts: localhost
   user: ansible
   become: yes
   gather_facts: yes
