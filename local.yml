@@ -6,8 +6,9 @@
   connection: ssh
   tasks:
          - name: installing packages 
-           yum: name='{{ item }}' state=present
-           with_items:
-                   - httpd
-                   - ntp
-                   - tree
+           yum:
+             name:
+               - httpd
+               - ntp
+               - tree
+             state: absent
