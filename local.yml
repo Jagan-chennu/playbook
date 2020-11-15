@@ -11,4 +11,4 @@
                - httpd
                - ntp
                - tree
-             state: absent
+             state: present
