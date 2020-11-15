@@ -5,8 +5,7 @@
   gather_facts: yes
   connection: ssh
   tasks:
-          - name: installing packages
-            yum:
+          - yum:
             name:
               - httpd
               - ntp
