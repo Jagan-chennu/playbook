@@ -5,9 +5,9 @@
   gather_facts: yes
   connection: ssh
   tasks:
-          - yum:
-            name:
-              - httpd
-              - ntp
-              - tree
-            state: present
+         - name: installing packages 
+           yum: name='{{ item }}' state=present
+           with_items:
+                   - httpd
+                   - ntp
+                   - tree
