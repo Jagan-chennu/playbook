@@ -1,5 +1,5 @@
 --- # installing httpd, ntpd & tree packages using ansible-pull command
-- hosts: db
+- hosts: localhost
   user: ansible
   become: yes
   gather_facts: yes
