@@ -1,14 +1,11 @@
---- # installing httpd, ntpd & tree packages using ansible-pull command
+--- #continously making changes to website
 - hosts: localhost
-  user: ansible
   become: yes
   gather_facts: yes
   connection: ssh
   tasks:
-         - name: installing packages 
-           yum:
-             name:
-               - httpd
-               - ntp
-               - tree
-             state: present
+          - name: adding line to index.html file
+            lineinfile:
+                    dest: /var/www/html/index.html
+                    line: Love yourself
+
