@@ -8,7 +8,8 @@
           file:
                   dest: /var/www/html/index.html
                   state: touch
-                  
+          
+        - name: adding new update to the webpage
           copy:
                   dest: /var/www/html/index.html
                   content: Yayyy! this is working
