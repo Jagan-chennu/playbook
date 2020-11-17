@@ -8,5 +8,8 @@
           file:
                   dest: /var/www/html/index.html
                   state: touch
-                  content: New update for new year 2021
+                  
+          copy:
+                  dest: /var/www/html/index.html
+                  content: Joke
 
